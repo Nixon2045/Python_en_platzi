@@ -1,7 +1,14 @@
-user_option = input ('piedra, papel o tijera =>')
-computer_option = 'papel'
+import random
 
-user_option = user_option.lower()
+options = ('piedra', 'tijera', 'papel')
+
+user_option = input ('piedra, papel o tijera =>')
+computer_option = random.choice(options)
+
+user_option = user_option.lower() 
+
+print('user_option =>', user_option)
+print('computer_option =>', computer_option)
 
 if user_option == computer_option:
     print('empate!')
