@@ -2,36 +2,63 @@ import random
 
 options = ('piedra', 'tijera', 'papel')
 
-user_option = input ('piedra, papel o tijera =>')
-computer_option = random.choice(options)
+computer_wins = 0
+users_wins = 0
 
-user_option = user_option.lower() 
+rounds = 1 
 
-print('user_option =>', user_option)
-print('computer_option =>', computer_option)
+while True:
 
-if user_option == computer_option:
-    print('empate!')
-elif user_option == 'piedra':
-    if computer_option == 'tijeras':
-        print('piedra gana a tijeras')
-        print('user gana!')
+    print('*' * 10)
+    print('ROUND ', rounds )
+    print('*' * 10)
+
+    rounds += 1
+    print('computer_wins=> ', computer_wins)
+    print('users_wins=> ', users_wins)
+
+    user_option = input ('piedra, papel o tijeras =>')
+    computer_option = random.choice(options)
+
+    user_option = user_option.lower() 
+
+    print('user_option =>', user_option)
+    print('computer_option =>', computer_option)
+
+    if user_option == computer_option:
+        print('empate!')
+    elif user_option == 'piedra':
+        if computer_option == 'tijeras':
+            print('piedra gana a tijeras')
+            print('user gana!')
+            users_wins += 1
+        else:
+            print('papel gana a piedra')
+            print('computer gano!')
+            computer_wins += 1
+    elif user_option == 'papel':
+        if computer_option == 'piedra':
+            print('papel gana a piedra')
+            print('gana user!')
+            users_wins += 1
+        else:
+            print('tijeras gana a papel')
+            print('computer gana')
+            computer_wins += 1
+    elif user_option == 'tijeras':
+        if computer_option == 'papel':
+            print('tijeras gana a papel')
+            print('user gana!')
+            users_wins += 1
+        else:
+            print('piedra gana sobre tijeras')
+            print('computer gana!')
+            computer_wins += 1
     else:
-        print('papel gana a piedra')
-        print('computer gano!')
-elif user_option == 'papel':
-    if computer_option == 'piedra':
-        print('papel gana a piedra')
-        print('gana user!')
-    else:
-        print('tijeras gana a papel')
-        print('computer gana')
-elif user_option == 'tijeras':
-    if computer_option == 'papel':
-        print('tijeras gana a papel')
-        print('user gana!')
-    else:
-        print('piedra gana sobre tijeras')
-        print('computer gana!')
-else:
-    print('sigue intentando algo valido')
+        print('sigue intentando algo valido')
+    if computer_wins == 2:
+        print('ganador supremo el computador!!!')
+        break
+    if users_wins == 2:
+        print('ganador supremo el userrrrr!!!')
+        break
