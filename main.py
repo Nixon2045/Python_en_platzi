@@ -1,6 +1,6 @@
 import random
 
-options = ('piedra', 'tijera', 'papel')
+options = ('piedra', 'tijeras', 'papel')
 
 computer_wins = 0
 users_wins = 0
@@ -13,17 +13,20 @@ while True:
     print('ROUND ', rounds )
     print('*' * 10)
 
-    rounds += 1
     print('computer_wins=> ', computer_wins)
     print('users_wins=> ', users_wins)
 
-    user_option = input ('piedra, papel o tijeras =>')
+    user_option = input ('piedra, papel o tijeras => ')
     computer_option = random.choice(options)
 
     user_option = user_option.lower() 
 
     print('user_option =>', user_option)
     print('computer_option =>', computer_option)
+    
+    if  not user_option in options:
+        print('Inserta una respuesta valida')
+        continue
 
     if user_option == computer_option:
         print('empate!')
@@ -54,11 +57,14 @@ while True:
             print('piedra gana sobre tijeras')
             print('computer gana!')
             computer_wins += 1
-    else:
-        print('sigue intentando algo valido')
+   # else:
+    #    print('sigue intentando algo valido')
     if computer_wins == 2:
         print('ganador supremo el computador!!!')
         break
     if users_wins == 2:
         print('ganador supremo el userrrrr!!!')
         break
+
+
+    rounds += 1
