@@ -56,7 +56,7 @@ list_people = [
         'profesion': 'ingenieria de datos',
     }
 ]
-
+# iterando sobre list_people las veces de units solo imprimiendo el name
 for units in list_people:
     print('name =>', units['name'])
 
