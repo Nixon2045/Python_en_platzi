@@ -1,3 +1,4 @@
+'''
 # version larga de sintaxis para list comprehension con dictionarios, usamos los llaves {} para formular
 
 dict = {}
@@ -10,3 +11,4 @@ print(dict)
 
 dict_v2 = {i : i * 2 for i in range(1, 6)}
 print(dict_v2)
+'''
