@@ -11,7 +11,7 @@ print(dict)
 
 dict_v2 = {i : i * 2 for i in range(1, 6)}
 print(dict_v2)
-'''
+
 # se agrego el valor population a las llaves del diccionario countries con la biblioteca random
 import random
 countries = ['col','pe','mex','bol']
@@ -25,3 +25,13 @@ print(population)
 
 population_v2 =  {country: random.randint(1, 100) for country in countries}
 print(population_v2)
+'''
+
+names = ['Santi','Nixon','Aleja']
+age = [23, 43, 27]
+
+print(dict(zip(names, age )))
+
+new_dict = {names : age for (names, age) in zip(names, age)}
+print(new_dict)
+
