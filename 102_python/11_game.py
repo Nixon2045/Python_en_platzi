@@ -1,7 +1,5 @@
 import random
 
-
-
 def choose_option():
     options = ('piedra', 'tijeras', 'papel')
     user_option = input ('piedra, papel o tijeras => ')
