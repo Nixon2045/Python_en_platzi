@@ -50,7 +50,10 @@ def check_rules(user_option, computer_option, users_wins, computer_wins):
 def run_game():
     computer_wins = 0
     users_wins = 0
-    rounds = 1 
+    rounds = 1
+    max_rounds = 5
+    continue_game = True
+
     while True:
 
         print('*' * 10)
@@ -60,18 +63,26 @@ def run_game():
         print('computer_wins=> ', computer_wins)
         print('users_wins=> ', users_wins)
 
-        rounds += 1
-
         user_option, computer_option = choose_option()
         users_wins, computer_wins = check_rules(user_option, computer_option,users_wins,computer_wins)    
+        continue_game = check_winner(users_wins, computer_wins)
 
+        rounds += 1
 
+def check_winner(users_wins, computer_wins):  
         if computer_wins == 2:
             print('ganador supremo el computador!!!')
-            break
+            return False
         if users_wins == 2:
             print('ganador supremo el userrrrr!!!')
-            break
+            return False
+        if round > max_rounds:
+            print('NADIE HA LLEGADO A LA SUPREMACIA!!')
+            return False
+        
+        return True
+            
+
 run_game()
 
    
