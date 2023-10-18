@@ -2,7 +2,7 @@ import random
 
 def choose_option():
     options = ('piedra', 'tijeras', 'papel')
-    user_option = input ('piedra, papel o tijeras => ')
+    user_option = input ('Inserta piedra, papel o tijeras => ')
     computer_option = random.choice(options)
 
     user_option = user_option.lower() 
@@ -65,18 +65,21 @@ def run_game():
 
         user_option, computer_option = choose_option()
         users_wins, computer_wins = check_rules(user_option, computer_option,users_wins,computer_wins)    
-        continue_game = check_winner(users_wins, computer_wins)
+        continue_game = check_winner(users_wins, computer_wins, max_rounds, rounds)
+
+        if not continue_game:
+            break
 
         rounds += 1
 
-def check_winner(users_wins, computer_wins):  
+def check_winner(users_wins, computer_wins, max_rounds, rounds):  
         if computer_wins == 2:
             print('ganador supremo el computador!!!')
             return False
         if users_wins == 2:
             print('ganador supremo el userrrrr!!!')
             return False
-        if round > max_rounds:
+        if rounds > max_rounds:
             print('NADIE HA LLEGADO A LA SUPREMACIA!!')
             return False
         
