@@ -66,14 +66,16 @@ def run_game():
 
         user_option, computer_option = choose_option()
         users_wins, computer_wins = check_rules(user_option, computer_option,users_wins,computer_wins)    
-
-
+        users_wins, computer_wins = check_winner()
+def check_winner(users_wins, computer_wins):     
         if computer_wins == 2:
             print('ganador supremo el computador!!!')
-            break
+            #break
         if users_wins == 2:
             print('ganador supremo el userrrrr!!!')
-            break
+            #break
+            
+
 run_game()
 
    
