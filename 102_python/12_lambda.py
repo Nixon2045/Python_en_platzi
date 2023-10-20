@@ -12,7 +12,7 @@ result = increment_v2(20)
 print(result)
 
 
-# ejemplo de otro lambda
+# ejemplo de otro lambda son varios parametros de entrada
 
 caso_x = lambda name, last_name: f'the fullname is {name.title()} {last_name.title()}'
 result = caso_x('nixon', 'betancour')
